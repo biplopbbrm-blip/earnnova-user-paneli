@@ -1,40 +1,112 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b14"><title>EarnNova247 User Panel</title><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="https://telegram.org/js/telegram-web-app.js"></script><style>
-:root{--bg:#080b14;--panel:rgba(20,27,43,.76);--line:rgba(151,174,220,.2);--txt:#f5f7ff;--muted:#98a6c4;--orange:#ff8a24;--blue:#37a5ff;--green:#36e0a0;--purple:#b66cff}*{box-sizing:border-box}body{margin:0;color:var(--txt);background:radial-gradient(ellipse at 10% 0%,#292047 0,transparent 36%),radial-gradient(ellipse at 100% 18%,#122c48 0,transparent 34%),var(--bg);font:15px/1.45 system-ui,sans-serif;padding-bottom:92px}.wrap{max-width:760px;margin:auto;padding:18px 15px}.top{display:flex;justify-content:space-between;align-items:center;margin:8px 0 24px}.brand{display:flex;align-items:center;gap:11px}.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;font-size:27px;background:linear-gradient(135deg,#ffb14a,#ff5a16);box-shadow:0 0 28px #ff791955}.brand h1{margin:0;font-size:20px}.brand small{color:var(--muted);font-size:10px;letter-spacing:1.3px}.glass{background:linear-gradient(135deg,#ffffff12,#ffffff04);border:1px solid var(--line);border-radius:22px;backdrop-filter:blur(18px);box-shadow:inset 0 1px #ffffff0a,0 15px 40px #0002}.iconbtn{border:1px solid var(--line);background:#ffffff08;color:white;border-radius:14px;padding:11px;cursor:pointer}h2{font-size:26px;margin:0 0 5px;letter-spacing:-.7px}.muted,.sub{color:var(--muted)}.sub{margin:0 0 18px}.balance{padding:22px;margin-bottom:20px;position:relative;overflow:hidden}.balance:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-80px;top:-100px;background:#ff8a2420;filter:blur(6px)}.label{font-size:11px;letter-spacing:1.5px;color:#b4bfd6;font-weight:750}.amount{font-size:39px;font-weight:850;margin:7px 0}.amount span{font-size:16px;color:var(--orange)}.pill{display:inline-block;padding:7px 10px;border-radius:99px;background:#36e0a014;color:var(--green);font-size:12px;border:1px solid #36e0a02b}.head{display:flex;justify-content:space-between;align-items:center;margin:23px 2px 12px}.head h3{margin:0;font-size:17px}.link{background:none;border:0;color:var(--orange);font-weight:700;cursor:pointer}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.action{padding:16px;text-align:left;color:var(--txt);cursor:pointer;min-height:126px}.ico{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-size:22px;margin-bottom:12px;background:#ff8a2418;border:1px solid #ff8a243a}.action b,.taskinfo b{display:block}.action small,.taskinfo small{display:block;color:var(--muted);margin-top:3px}.action:nth-child(2) .ico{background:#36e0a018;border-color:#36e0a044}.action:nth-child(3) .ico{background:#b66cff18;border-color:#b66cff44}.action:nth-child(4) .ico{background:#37a5ff18;border-color:#37a5ff44}.tasklist{display:grid;gap:10px}.task{padding:13px;display:flex;align-items:center;gap:11px}.taskico{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;background:#b66cff19;border:1px solid #b66cff44;font-size:20px}.taskinfo{min-width:0;flex:1;overflow-wrap:anywhere}.taskinfo small{font-size:12px}.reward{font-size:12px;color:#ffb15e;font-weight:800;margin-top:5px}.taskbtn,.primary{border:0;border-radius:12px;padding:10px 12px;background:linear-gradient(135deg,#ffad43,#ff681d);color:white;font-weight:800;cursor:pointer;white-space:nowrap}.page{display:none}.page.active{display:block}.notice{padding:15px;color:var(--muted);font-size:13px;margin-top:14px}.empty{text-align:center;padding:25px 15px;color:var(--muted)}.empty strong{display:block;color:var(--txt);margin-bottom:5px}.rowcard{padding:15px;margin-bottom:10px;display:flex;justify-content:space-between;gap:10px}.field{width:100%;padding:13px;border-radius:12px;border:1px solid var(--line);background:#080b14;color:white;margin:10px 0}.nav{position:fixed;bottom:0;left:0;right:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#090d18e8;backdrop-filter:blur(20px);border-top:1px solid var(--line);z-index:5}.navinner{max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.nav button{border:0;border-radius:14px;background:transparent;color:#8997b4;padding:9px 4px;cursor:pointer;font-size:11px}.nav button span{display:block;font-size:20px;margin-bottom:3px}.nav button.active{background:#ff8a2414;color:#ffad60}.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#20283a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;display:none;z-index:9;max-width:90%}
-/* Premium micro-interactions and ambient glow */
-@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes softPulse{0%,100%{box-shadow:0 0 18px #ff8a2420,inset 0 1px #ffffff0a}50%{box-shadow:0 0 34px #ff8a2440,inset 0 1px #ffffff14}}
-@keyframes glowDrift{0%,100%{transform:translate(0,0);opacity:.7}50%{transform:translate(-14px,10px);opacity:1}}
-@keyframes riseIn{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
-body:before{content:"";position:fixed;z-index:-1;pointer-events:none;width:260px;height:260px;right:-100px;top:28%;border-radius:50%;background:radial-gradient(circle,#267fff20,transparent 68%);filter:blur(12px);animation:glowDrift 9s ease-in-out infinite}
-.brand .logo{animation:softPulse 3.5s ease-in-out infinite}
-.page.active{animation:pageIn .35s cubic-bezier(.2,.7,.2,1) both}
-.balance{animation:riseIn .55s cubic-bezier(.2,.7,.2,1) both}
-.action{animation:riseIn .45s both;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
-.action:nth-child(2){animation-delay:.05s}.action:nth-child(3){animation-delay:.1s}.action:nth-child(4){animation-delay:.15s}
-.action:hover{transform:translateY(-4px);border-color:#ff9c4a70;box-shadow:0 12px 35px #ff8a2417,inset 0 1px #ffffff12}
-.task{animation:riseIn .4s both;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.task:hover{transform:translateY(-2px);border-color:#8bbcff60;box-shadow:0 12px 30px #2c7cff16}
-.taskbtn,.primary,.iconbtn,.nav button{transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
-.taskbtn:hover,.primary:hover{filter:brightness(1.1);box-shadow:0 0 24px #ff791955}
-.taskbtn:active,.primary:active,.iconbtn:active{transform:scale(.96)}
-.nav button.active{box-shadow:inset 0 0 20px #ff8a2410;animation:pageIn .22s ease both}
-.pill{animation:softPulse 4s ease-in-out infinite}
-.taskico{transition:transform .25s ease,box-shadow .25s ease}
-.task:hover .taskico{transform:rotate(-5deg) scale(1.06);box-shadow:0 0 20px #b66cff22}
-.toast{animation:riseIn .22s ease both}
-.glass{transition:border-color .22s ease,box-shadow .22s ease}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
-@media(min-width:600px){.actions{grid-template-columns:repeat(4,1fr)}.action{min-height:140px}}
-</style></head><body><main class="wrap"><header class="top"><div class="brand"><div class="logo">ϟ</div><div><h1>Earn<span style="color:var(--orange)">Nova247</span></h1><small>REWARDS • TASKS • COMMUNITY</small></div></div><button class="iconbtn" id="profileTop">◉</button></header>
-<section class="page active" id="home"><h2 id="welcome">Welcome back 👋</h2><p class="sub">Your rewards dashboard</p><div class="glass balance"><div class="label">YOUR POINTS BALANCE</div><div class="amount">— <span>PTS</span></div><span class="pill">✦ Complete eligible tasks to earn</span><p class="muted" id="userLabel">Balance sync will be connected securely.</p></div><div class="head"><h3>Quick actions</h3></div><div class="actions"><button class="glass action" data-page="tasks"><span class="ico">▤</span><b>Tasks</b><small>Browse active ads</small></button><button class="glass action" data-page="bonus"><span class="ico">🎁</span><b>Daily Bonus</b><small>Daily reward</small></button><button class="glass action" data-page="referral"><span class="ico">♧</span><b>Referral</b><small>Invite friends</small></button><button class="glass action" data-page="wallet"><span class="ico">▣</span><b>My Wallet</b><small>Points history</small></button></div><div class="head"><h3>Featured tasks</h3><button class="link" data-page="tasks">View all →</button></div><div id="featured" class="tasklist"><div class="glass empty">Loading tasks…</div></div><div class="glass notice">🔒 Points are only credited after secure server verification.</div></section>
-<section class="page" id="tasks"><h2>Available tasks</h2><p class="sub">Active advertiser campaigns</p><div id="allTasks" class="tasklist"><div class="glass empty">Loading tasks…</div></div><div class="glass notice">Opening a link does not automatically verify task completion.</div></section>
-<section class="page" id="bonus"><h2>Daily Bonus</h2><p class="sub">Your daily reward</p><div class="glass balance"><div class="label">DAILY BONUS</div><div class="amount">🎁 <span>Reward</span></div><p class="muted">The bot/server must verify claims to prevent duplicate rewards.</p><button class="primary" id="bonusBtn">Check bonus status</button></div><div class="glass notice">Secure bonus claiming will be connected to the existing bot points system next.</div></section>
-<section class="page" id="referral"><h2>Invite friends</h2><p class="sub">Share your Telegram bot link</p><div class="glass balance"><div class="label">YOUR REFERRAL LINK</div><input class="field" id="refLink" readonly value="Open this panel inside Telegram"><button class="primary" id="copyRef">Copy referral link</button></div><div class="glass notice">Referral rewards require server-side verification of new users.</div></section>
-<section class="page" id="wallet"><h2>My Wallet</h2><p class="sub">Balance and transaction history</p><div class="glass balance"><div class="label">AVAILABLE POINTS</div><div class="amount">— <span>PTS</span></div><p class="muted">Live balance awaits secure bot connection.</p></div><div class="glass empty">Transaction history is not connected yet.</div></section>
-<section class="page" id="profile"><h2>Your profile</h2><p class="sub">Telegram account</p><div class="glass rowcard"><span class="muted">Name</span><b id="profileName">Preview mode</b></div><div class="glass rowcard"><span class="muted">Telegram ID</span><b id="profileId">—</b></div><div class="glass notice">This is the user panel. Admin panel will be built separately afterward.</div></section></main>
-<nav class="nav"><div class="navinner"><button class="active" data-page="home"><span>⌂</span>Home</button><button data-page="tasks"><span>▤</span>Tasks</button><button data-page="wallet"><span>▣</span>Wallet</button><button data-page="profile"><span>◉</span>Profile</button></div></nav><div id="toast" class="toast"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BG Remover AI</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,sans-serif;color:white;min-height:100vh;
+padding:24px 16px;
+background:radial-gradient(ellipse at top left,#512da8,transparent 50%),
+radial-gradient(ellipse at bottom right,#075985,transparent 50%),#100c25
+}
+.app{max-width:450px;margin:auto}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:35px}
+.logo{padding:14px;border-radius:16px;background:linear-gradient(135deg,#a855f7,#3b82f6);font-size:24px}
+h2{font-size:19px}
+small{color:#b9b4d4}
+.hero{margin-bottom:25px}
+h1{font-size:36px;line-height:1.2}
+h1 span{color:#a78bfa}
+.hero p{color:#c1bbd9;line-height:1.7;margin-top:12px}
+.card{padding:18px;border:1px solid #ffffff25;border-radius:24px;background:#ffffff0c;backdrop-filter:blur(15px)}
+.upload{padding:35px 15px;text-align:center;border:2px dashed #8b5cf6;border-radius:18px;background:#8b5cf610;cursor:pointer}
+.upload .icon{font-size:42px;margin-bottom:15px}
+.upload p{margin-top:10px;color:#c4b5fd}
+input{display:none}
+#preview{display:none;margin-top:18px}
+#preview img{max-width:100%;max-height:300px;display:block;margin:auto;border-radius:12px}
+#filename{font-size:12px;color:#c4b5fd;margin-top:10px;overflow-wrap:anywhere}
+button,.download{display:block;width:100%;padding:16px;margin-top:18px;border:0;border-radius:14px;background:linear-gradient(100deg,#9333ea,#3b82f6);color:white;font-size:15px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
+button:disabled{opacity:.5}
+#status{margin-top:14px;color:#ddd6fe;font-size:13px;line-height:1.6;overflow-wrap:anywhere}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.feature{padding:17px;border-radius:18px;background:#ffffff0b;border:1px solid #ffffff15}
+.feature p{font-size:12px;color:#b9b4d4;line-height:1.6;margin-top:8px}
+footer{text-align:center;margin-top:28px;color:#9993b7;font-size:12px}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="header">
+<div class="logo">✂️</div>
+<div><h2>BG Remover AI</h2><small>AI Background Studio</small></div>
+</header>
+<section class="hero">
+<h1>Remove Background.<br><span>Keep the Magic.</span></h1>
+<p>Upload your photo and prepare a clean transparent image.</p>
+</section>
+<section class="card">
+<label class="upload" for="photo">
+<div class="icon">☁️</div>
+<strong>Upload Your Image</strong>
+<p>Tap here to browse photos</p>
+<small>JPG, PNG or WEBP · Max 10 MB</small>
+</label>
+<input id="photo" type="file" accept="image/jpeg,image/png,image/webp">
+<div id="preview">
+<img id="image" alt="Selected photo preview">
+<div id="filename"></div>
+</div>
+<button id="remove" disabled>✨ Remove Background</button>
+<div id="status" role="status">Choose an image to get started.</div>
+</section>
+<section class="features">
+<div class="feature"><div>⚡</div><strong>Easy to Use</strong><p>Simple image workflow.</p></div>
+<div class="feature"><div>🪄</div><strong>Transparent PNG</strong><p>Save your processed image.</p></div>
+<div class="feature"><div>📱</div><strong>Mobile Friendly</strong><p>Made for phone screens.</p></div>
+<div class="feature"><div>💜</div><strong>Glass Design</strong><p>Purple and blue interface.</p></div>
+</section>
+<footer>BG Remover AI · Made for creators</footer>
+</main>
 <script>
-const SUPABASE_URL='https://pinddgqvqnjihnpreeny.supabase.co';const SUPABASE_KEY='sb_publishable_8FXzPdT65J6uVqDpEDASsg_E3fFDsmC';const db=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}const user=tg?.initDataUnsafe?.user||null;function toast(s){let e=document.getElementById('toast');e.textContent=s;e.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>e.style.display='none',2600)}function page(n){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===n));document.querySelectorAll('[data-page]').forEach(e=>e.classList.toggle('active',e.dataset.page===n));scrollTo({top:0,behavior:'smooth'})}document.querySelectorAll('[data-page]').forEach(e=>e.onclick=()=>page(e.dataset.page));document.getElementById('profileTop').onclick=()=>page('profile');if(user){document.getElementById('welcome').textContent='Welcome, '+(user.first_name||'friend')+' 👋';document.getElementById('userLabel').textContent='Telegram ID: '+user.id;document.getElementById('profileName').textContent=[user.first_name,user.last_name].filter(Boolean).join(' ')||'Telegram user';document.getElementById('profileId').textContent=user.id;document.getElementById('refLink').value='https://t.me/EarnNova247Bot?start=ref_'+user.id}else{document.getElementById('refLink').value='Open inside Telegram to create your referral link'}document.getElementById('bonusBtn').onclick=()=>toast('Bonus claiming needs secure bot/server integration.');document.getElementById('copyRef').onclick=async()=>{try{await navigator.clipboard.writeText(document.getElementById('refLink').value);toast('Referral link copied')}catch(e){document.getElementById('refLink').select();toast('Select and copy the link manually')}};
-async function ads(){let targets=[document.getElementById('featured'),document.getElementById('allTasks')];if(!db){targets.forEach(e=>e.innerHTML='<div class="glass empty"><strong>Could not connect</strong>Check internet and Supabase SDK.</div>');return}try{let {data,error}=await db.from('advertisements').select('id,name,url,reward_paisa,is_active,created_at').eq('is_active',true).order('created_at',{ascending:false});if(error)throw error;if(!data?.length){targets.forEach(e=>e.innerHTML='<div class="glass empty"><strong>No active tasks</strong>Active ads will appear here.</div>');return}function card(ad){let url;try{let u=new URL(ad.url);if(['https:','http:'].includes(u.protocol))url=u.href}catch{}let a=document.createElement('article');a.className='glass task';let i=document.createElement('div');i.className='taskico';i.textContent='↗';let info=document.createElement('div');info.className='taskinfo';let b=document.createElement('b');b.textContent=ad.name||'Sponsored task';let d=document.createElement('small');d.textContent='Open advertiser website';let r=document.createElement('div');r.className='reward';r.textContent='Reward: '+Number(ad.reward_paisa||0)+' paisa';info.append(b,d,r);let btn=document.createElement('button');btn.className='taskbtn';btn.textContent='Open ↗';btn.disabled=!url;btn.onclick=()=>{if(tg)tg.openLink(url);else window.open(url,'_blank','noopener')};a.append(i,info,btn);return a}targets.forEach((e,j)=>{e.replaceChildren();data.slice(0,j?100:3).forEach(ad=>e.append(card(ad)))})}catch(err){console.error(err);targets.forEach(e=>e.innerHTML='<div class="glass empty"><strong>Tasks could not load</strong>Check Supabase table and active-ad SELECT policy.</div>')}}ads();
-</script></body></html>
+if(window.Telegram&&window.Telegram.WebApp){
+window.Telegram.WebApp.ready();
+window.Telegram.WebApp.expand();
+}
+const picker=document.getElementById("photo");
+const preview=document.getElementById("preview");
+const image=document.getElementById("image");
+const filename=document.getElementById("filename");
+const button=document.getElementById("remove");
+const status=document.getElementById("status");
+let file=null,previewURL=null;
+picker.addEventListener("change",()=>{
+file=picker.files[0];
+if(!file)return;
+if(!["image/jpeg","image/png","image/webp"].includes(file.type)){
+status.textContent="Please choose a JPG, PNG or WEBP image.";
+file=null;button.disabled=true;return;
+}
+if(file.size>10*1024*1024){
+status.textContent="Image must be smaller than 10 MB.";
+file=null;button.disabled=true;return;
+}
+if(previewURL)URL.revokeObjectURL(previewURL);
+previewURL=URL.createObjectURL(file);
+image.src=previewURL;
+filename.textContent=file.name;
+preview.style.display="block";
+button.disabled=false;
+status.textContent="Image selected. Backend connection is the next step.";
+});
+button.addEventListener("click",()=>{
+status.textContent="Your image is selected! Actual background removal will work after we connect the secure backend.";
+});
+</script>
+</body>
+</html>
